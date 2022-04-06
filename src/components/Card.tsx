@@ -7,6 +7,10 @@ function Card({ prod }: any) {
     return (
         <div className="card_item">
             <div className="card_item_img">
+                <div className="card_item_img-name">
+                <p className="name">created_by</p>
+                <p className="name">{prod.created_by.display_name}</p>
+                </div>
                 <img className="img" src={foto} alt="" />
             </div>
             <div className="card_item_block">
