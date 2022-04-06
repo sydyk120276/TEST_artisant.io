@@ -1,11 +1,13 @@
 import React, { useEffect } from 'react'
 import { useTypedSelector } from '../hooks/useTypeSelector';
 
-import { fetchUsers } from '../store/action-creators/user';
 import { useActions } from '../hooks/useActions';
+import Card from './Card'
+import '../assets/styles/style.scss'
 
 const UserList: React.FC = () => {
-  const { users, error, loading } = useTypedSelector((s) => s.user);
+  const { products, error, loading } = useTypedSelector((s) => s.user);
+  console.log(products)
   const { fetchUsers } = useActions()
 
   useEffect(() => {
@@ -21,9 +23,13 @@ const UserList: React.FC = () => {
 
   return (
     <div>
-      {users.map((user) => (
-        <div key={user.product_id}>{user.name}</div>
-      ))}
+    <h1 className="">Explore</h1>
+    <h3>Buy and sell digital fashion NFT art</h3>
+    <div className="home"> 
+      {products.map((product) => {
+        return <Card key={product.product_id} prod={product} />
+  })}
+    </div>
     </div>
   );
 }

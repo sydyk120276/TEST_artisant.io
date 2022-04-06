@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+body {
+    max-width: 1500px ;
+    margin: 0 auto;
+    font-family: 'Open Sans';
+}
+
+h1 {
+    font-weight: 700;
+font-size: 32px;
+line-height: 100%;
+}
+
+h3 {
+    font-weight: 400;
+font-size: 14px;
+line-height: 100%;
+color: #828282;
+letter-spacing: 0.01em;
+}
+
+.home {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+

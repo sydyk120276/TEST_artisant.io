@@ -1,4 +1,4 @@
-import { UserAction, UserActionTypes } from "../../types/user"
+import { UserAction, UserActionTypes } from "../../types/product"
 import { Dispatch } from "react"
 import axios from "axios"
 

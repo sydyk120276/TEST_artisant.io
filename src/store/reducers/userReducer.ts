@@ -1,7 +1,7 @@
-import { UserAction, UserActionTypes, UserState } from "../../types/user";
+import { UserAction, UserActionTypes, UserState } from "../../types/product";
 
 const initialState: UserState = {
-  users: [],
+  products: [],
   loading: false,
   error: null,
   page: 1,
@@ -15,13 +15,13 @@ export const userReducer = (state = initialState, action: UserAction): UserState
       return {
         loading: true,
         error: null,
-        users: [],
+        products: [],
         page: 1,
         limit: 10,
         totalCount: 0,
       };
     case UserActionTypes.FETCH_USERS_SUCCESS:
-      return { ...state, loading: false, error: null, users: action.payload, totalCount: action.totalCount };
+      return { ...state, loading: false, error: null, products: action.payload, totalCount: action.totalCount };
     case UserActionTypes.FETCH_USERS_ERROR:
       return { ...state, loading: false, error: action.payload };
     case UserActionTypes.SET_CURRENT_PAGE:

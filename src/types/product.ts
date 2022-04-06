@@ -1,5 +1,5 @@
 export interface UserState {
-  users: any[];
+  products: any[];
   loading: boolean;
   error: null | string;
   page: number;
