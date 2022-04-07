@@ -22,10 +22,10 @@ const UserList: React.FC = () => {
   }
 
   return (
-    <div>
+    <div className="product_list">
     <h1 className="">Explore</h1>
     <h3>Buy and sell digital fashion NFT art</h3>
-    <div className="home"> 
+    <div className="home">
       {products.map((product) => {
         return <Card key={product.product_id} prod={product} />
   })}

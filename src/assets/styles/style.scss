@@ -1,9 +1,41 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
 body {
-    max-width: 1500px ;
+    max-width: 1350px ;
     margin: 0 auto;
     font-family: 'Open Sans';
+    @media screen and (max-width: 1680px) {
+     max-width: 1000px ;
+}
+    @media screen and (max-width: 1366px) {
+     max-width: 1000px ;
+    }
+    @media screen and (max-width: 1024px) {
+     max-width: 660px ;
+}
+    @media screen and (max-width: 768px) {
+     max-width: 560px ;
+}
+    @media screen and (max-width: 600px) {
+     max-width: 450px ;
+}
+    @media screen and (max-width: 533px) {
+     max-width: 300px ;
+     margin: 0 auto;
+}
+    @media screen and (max-width: 360px) {
+     max-width: 300px ;
+     margin: 0 auto;
+}
+}
+
+.product_list {
+    @media screen and (max-width: 533px) {
+      display: flex;
+      flex-direction: column;
+     max-width: 400px ;
+     margin: 0 auto;
+}
 }
 
 h1 {
@@ -24,5 +56,6 @@ letter-spacing: 0.01em;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+
 }
 
