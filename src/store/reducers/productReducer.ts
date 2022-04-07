@@ -1,7 +1,8 @@
-import { UserAction, UserActionTypes, UserState } from "../../types/product";
+import { ProductAction, ProductActionTypes, ProductState } from "../../types/product";
 
-const initialState: UserState = {
+const initialState: ProductState = {
   products: [],
+  fiteredProduct: [],
   loading: false,
   error: null,
   page: 1,
@@ -9,9 +10,9 @@ const initialState: UserState = {
   totalCount: 0,
 };
 
-export const userReducer = (state = initialState, action: UserAction): UserState => {
+export const ProductReducer = (state = initialState, action: ProductAction): ProductState => {
   switch (action.type) {
-    case UserActionTypes.FETCH_USERS:
+    case ProductActionTypes.FETCH_PRODUCTS:
       return {
         loading: true,
         error: null,
@@ -19,12 +20,27 @@ export const userReducer = (state = initialState, action: UserAction): UserState
         page: 1,
         limit: 10,
         totalCount: 0,
+        fiteredProduct: [],
       };
-    case UserActionTypes.FETCH_USERS_SUCCESS:
-      return { ...state, loading: false, error: null, products: action.payload, totalCount: action.totalCount };
-    case UserActionTypes.FETCH_USERS_ERROR:
+    case ProductActionTypes.FETCH_PRODUCTS_SUCCESS:
+      return {
+        ...state,
+        loading: false,
+        error: null,
+        products: action.payload,
+        totalCount: action.totalCount,
+      };
+    case ProductActionTypes.SORT_PRODUCT:
+      return {
+        ...state,
+        loading: false,
+        error: null,
+        totalCount: action.totalCount,
+        fiteredProduct: action.fiteredProduct,
+      };
+    case ProductActionTypes.FETCH_PRODUCTS_ERROR:
       return { ...state, loading: false, error: action.payload };
-    case UserActionTypes.SET_CURRENT_PAGE:
+    case ProductActionTypes.SET_CURRENT_PAGE:
       return { ...state, page: action.payload };
     default:
       return state;
@@ -54,3 +70,4 @@ export function createPages(
     }
   }
 }
+

@@ -36,6 +36,21 @@ body {
      max-width: 400px ;
      margin: 0 auto;
 }
+  &_btn {
+    padding: 10px 30px;
+    background-color: rgb(209, 91, 91);
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    &:hover {
+      background-color: rgb(197, 60, 60);
+    }
+    &:active {
+      background-color: rgb(146, 26, 26);
+    }
+  }
 }
 
 h1 {

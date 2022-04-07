@@ -1,5 +1,5 @@
-import * as UserActionCreators from './product'
+import * as ProductActionCreators from './product'
 
 export default {
-  ...UserActionCreators
+  ...ProductActionCreators
 }

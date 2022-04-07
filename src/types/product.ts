@@ -1,5 +1,6 @@
-export interface UserState {
+export interface ProductState {
   products: any[];
+  fiteredProduct: any[];
   loading: boolean;
   error: null | string;
   page: number;
@@ -7,35 +8,42 @@ export interface UserState {
   totalCount: number;
 }
 
-export enum UserActionTypes {
-  FETCH_USERS = "FETCH_USERS",
-  FETCH_USERS_SUCCESS = "FETCH_USERS_SUCCESS",
-  FETCH_USERS_ERROR = "FETCH_USERS_ERROR",
+export enum ProductActionTypes {
+  FETCH_PRODUCTS = "FETCH_PRODUCTS",
+  FETCH_PRODUCTS_SUCCESS = "FETCH_PRODUCTS_SUCCESS",
+  FETCH_PRODUCTS_ERROR = "FETCH_PRODUCTS_ERROR",
   SET_CURRENT_PAGE = "SET_CURRENT_PAGE",
+  SORT_PRODUCT = "SORT_PRODUCT",
 }
 
-interface FetchUserAction {
-  type: UserActionTypes.FETCH_USERS;
+interface FetchProductAction {
+  type: ProductActionTypes.FETCH_PRODUCTS;
 }
 
-interface FetchUserSuccessAction {
-  type: UserActionTypes.FETCH_USERS_SUCCESS;
+interface FetchProductSuccessAction {
+  type: ProductActionTypes.FETCH_PRODUCTS_SUCCESS;
   payload: any[];
-  totalCount: number
+  totalCount: number;
+}
+interface FetchProductSortSuccessAction {
+  type: ProductActionTypes.SORT_PRODUCT;
+  totalCount: number;
+  fiteredProduct: any[];
 }
 
-interface FetchUserErrorAction {
-  type: UserActionTypes.FETCH_USERS_ERROR;
+interface FetchProductErrorAction {
+  type: ProductActionTypes.FETCH_PRODUCTS_ERROR;
   payload: string;
 }
 
-interface FetchUserCurrentPageAction {
-  type: UserActionTypes.SET_CURRENT_PAGE;
+interface FetchProductCurrentPageAction {
+  type: ProductActionTypes.SET_CURRENT_PAGE;
   payload: number;
 }
 
-export type UserAction =
-  | FetchUserAction
-  | FetchUserSuccessAction
-  | FetchUserErrorAction
-  | FetchUserCurrentPageAction;
+export type ProductAction =
+  | FetchProductAction
+  | FetchProductSuccessAction
+  | FetchProductErrorAction
+  | FetchProductSortSuccessAction
+  | FetchProductCurrentPageAction;
